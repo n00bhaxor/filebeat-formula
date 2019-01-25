@@ -1,10 +1,10 @@
 {% if salt['grains.get']('os_family') == 'Debian' %}
 filebeat_repo:
   pkgrepo.managed:
-    - name: deb https://packages.elastic.co/beats/apt stable main
+    - name: deb deb https://artifacts.elastic.co/packages/6.x/apt stable main
     - file: /etc/apt/sources.list.d/filebeat.list
     - gpgcheck: 1
-    - key_url: https://packages.elastic.co/GPG-KEY-elasticsearch
+    - key_url:  https://artifacts.elastic.co/GPG-KEY-elasticsearch
     - require_in:
       - pkg: filebeat.install
     - watch_in:
