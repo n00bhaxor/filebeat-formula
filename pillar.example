@@ -39,17 +39,17 @@ filebeat:
       json.add_error_key: true
 
   elasticsearch:
-    enabled: False
+    enabled: True
     server: 127.0.0.1:9200
 
   logstash:
-    enabled: True
+    enabled: False
     server:
       - logstash-shipper1:5044
       - logstash-shipper2:5044
 
     tls:
-      enabled: True
+      enabled: False
       # path to the certificate of your ELK server
       # set to empty to use system certificates
       ssl_cert_path: /etc/pki/tls/certs/logstash-forwarder.crt
